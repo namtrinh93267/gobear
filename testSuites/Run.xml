@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name = "Run">
+    <test name = "Run">
+        <classes>
+            <class name = "BasicGoal"></class>
+            <class name = "StretchGoal"></class>
+        </classes>
+    </test>
+</suite>

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd" name="TestSuite" time="8.209" tests="1" errors="0" skipped="0" failures="0">
+  <properties>
+    <property name="gopherProxySet" value="false"/>
+    <property name="awt.toolkit" value="sun.lwawt.macosx.LWCToolkit"/>
+    <property name="java.specification.version" value="10"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="sun.cpu.isalist" value=""/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.class.path" value="/usr/local/Cellar/maven/3.6.2/libexec/boot/plexus-classworlds-2.6.0.jar"/>
+    <property name="java.vm.vendor" value="&quot;Oracle Corporation&quot;"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="user.timezone" value="Asia/Ho_Chi_Minh"/>
+    <property name="maven.conf" value="/usr/local/Cellar/maven/3.6.2/libexec/conf"/>
+    <property name="os.name" value="Mac OS X"/>
+    <property name="java.vm.specification.version" value="10"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="user.country" value="VN"/>
+    <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home/lib"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher test -DsuiteXmlFiles=testSuites/Run.xml -Denvironment=production -Dbrowser=chrome -Dplatform=web"/>
+    <property name="http.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="maven.home" value="/usr/local/Cellar/maven/3.6.2/libexec"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="user.home" value="/Users/namtrinh26793"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.version.date" value="2018-03-20"/>
+    <property name="java.home" value="/Library/Java/JavaVirtualMachines/jdk-10.jdk/Contents/Home"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.CGraphicsEnvironment"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="ftp.nonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+    <property name="java.runtime.version" value="10+46"/>
+    <property name="user.name" value="namtrinh26793"/>
+    <property name="path.separator" value=":"/>
+    <property name="platform" value="web"/>
+    <property name="os.version" value="10.15.4"/>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="browser" value="chrome"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="java.vendor.version" value="18.3"/>
+    <property name="suiteXmlFiles" value="testSuites/Run.xml"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.java.com/bugreport/"/>
+    <property name="java.io.tmpdir" value="/var/folders/7g/5nl1pks51s34vsftgtlsb_p40000gn/T/"/>
+    <property name="java.version" value="10"/>
+    <property name="user.dir" value="/Volumes/Nam-Trinh/Test/GoBear"/>
+    <property name="os.arch" value="x86_64"/>
+    <property name="maven.multiModuleProjectDirectory" value="/Volumes/Nam-Trinh/Test/GoBear"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="java.awt.printerjob" value="sun.lwawt.macosx.CPrinterJob"/>
+    <property name="sun.os.patch.level" value="unknown"/>
+    <property name="environment" value="production"/>
+    <property name="java.library.path" value="/Users/namtrinh26793/Library/Java/Extensions:/Library/Java/Extensions:/Network/Library/Java/Extensions:/System/Library/Java/Extensions:/usr/lib/java:."/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.vm.version" value="10+46"/>
+    <property name="classworlds.conf" value="/usr/local/Cellar/maven/3.6.2/libexec/bin/m2.conf"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
+    <property name="library.jansi.path" value="/usr/local/Cellar/maven/3.6.2/libexec/lib/jansi-native"/>
+    <property name="java.class.version" value="54.0"/>
+    <property name="socksNonProxyHosts" value="local|*.local|169.254/16|*.169.254/16"/>
+  </properties>
+  <testcase name="stretchGoal" classname="StretchGoal" time="5.982"/>
+</testsuite>

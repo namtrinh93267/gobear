@@ -1,0 +1,22 @@
+{
+    "production": {
+        "homepage_url": "https://www.gobear.com/ph?x_session_type=UAT",
+        "filter": {
+            "promotion": "Show All",
+            "insurers": [
+                "FPG Insurance"
+            ],
+            "personal_accident_offset": "10,-10"
+        },
+        "sort": {
+            "sort_option": "Price: High to low"
+        },
+        "details": {
+            "policy_type": "single",
+            "destination": "Japan",
+            "who_going": "just me",
+            "start_date": "1-Jun-2020",
+            "end_date": "10-Jun-2020"
+        }
+    }
+}

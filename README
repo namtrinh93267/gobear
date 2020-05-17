@@ -1,0 +1,12 @@
+-------RUNNING GUIDE-------
+1. Install Java
+2. Install Maven => https://maven.apache.org/install.html
+3. Open command prompt
+4. cd to project folder with command 'cd {$yourPath}/gobear'
+5. Run this command 'mvn test -DsuiteXmlFiles=testSuites/Run.xml -Denvironment=production -Dbrowser=chrome -Dplatform=web'
+
+Note:
+* If you want to run on Mobile, just change platform value to 'wap'
+* For 'environment' and 'browser' variables, actually only accept 'production' and 'chrome' values, I will keep updating in the future.
+* Run.xml file contains 2 class (BasicGoal, StretchGoal)
+* For StretchGoal, video will be stored 'recordVideos' folder after running, please use VLC media player to open it.

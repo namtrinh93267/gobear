@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [BasicGoal]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="BasicGoal(failed)">
+    <classes>
+      <class name="BasicGoal">
+        <methods>
+          <include name="afterMethod"/>
+          <include name="afterSuite"/>
+          <include name="beforeSuite"/>
+          <include name="basicGoal"/>
+          <include name="beforeMethod"/>
+        </methods>
+      </class> <!-- BasicGoal -->
+    </classes>
+  </test> <!-- BasicGoal(failed) -->
+</suite> <!-- Failed suite [BasicGoal] -->

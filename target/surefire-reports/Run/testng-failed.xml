@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Run]" guice-stage="DEVELOPMENT" verbose="0">
+  <test name="Run(failed)">
+    <classes>
+      <class name="StretchGoal">
+        <methods>
+          <include name="beforeSuite"/>
+          <include name="beforeMethod"/>
+          <include name="stretchGoal"/>
+        </methods>
+      </class> <!-- StretchGoal -->
+    </classes>
+  </test> <!-- Run(failed) -->
+</suite> <!-- Failed suite [Run] -->
