@@ -10,3 +10,4 @@ Note:
 * For 'environment' and 'browser' variables, actually only accept 'production' and 'chrome' values, I will keep updating in the future.
 * Run.xml file contains 2 class (BasicGoal, StretchGoal)
 * For StretchGoal, video will be stored 'recordVideos' folder after running, please use VLC media player to open it.
+* Reports will be stored in 'reports' folder
