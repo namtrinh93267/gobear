@@ -272,8 +272,8 @@ public class TravelResultPage {
         }
     }
 
-    public static void verifyVideoRecordingFunctionExist() {
-        ReportManager.addReportLog(LogStatus.INFO, "Verify Video recording function exist");
-        GeneralAction.verifyElementExists(By.xpath(""));
+    public static void verifyLeftSideMenuIsFunctional() {
+        ReportManager.addReportLog(LogStatus.INFO, "Verify left side menu is functional");
+        GeneralAction.verifyElementExists(By.xpath("//div[contains(@class,'sidebar-wrapper')]"));
     }
 }

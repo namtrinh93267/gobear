@@ -29,6 +29,10 @@ public class ReportManager {
         extentTest.log(logStatus, text);
     }
 
+    public static String addScreencast(String screencastPath) {
+        return extentTest.addScreencast(screencastPath);
+    }
+
     public static void flushReport() {
         extentReports.flush();
     }

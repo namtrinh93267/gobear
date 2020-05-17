@@ -1,8 +1,8 @@
 package automationLibrary.drivers;
 
-import automationLibrary.actions.GeneralAction;
 import automationLibrary.executions.Execution;
 import automationLibrary.initiations.Configurations;
+import automationLibrary.utils.VideoRecorder;
 import org.apache.commons.lang3.SystemUtils;
 import org.monte.media.Format;
 import org.monte.media.FormatKeys;
@@ -28,7 +28,7 @@ import static org.monte.media.VideoFormatKeys.QualityKey;
 
 public class Driver {
     public static WebDriver instance;
-    public static ScreenRecorder screenRecorder;
+    public static VideoRecorder videoRecorder;
 
     public static void initBrowser(String browser, String environment, boolean isMobileEmulation) {
         switch (browser) {
@@ -39,14 +39,14 @@ public class Driver {
                     System.setProperty("webdriver.chrome.driver", Configurations.CHROMEDRIVER_WINDOWS_FILE_PATH);
                 }
                 DesiredCapabilities capabilities = DesiredCapabilities.chrome();
+                ChromeOptions chromeOptions = new ChromeOptions();
 
                 if(isMobileEmulation) {
                     Map<String, String> mobileEmulation = new HashMap<>();
                     mobileEmulation.put("deviceName", "iPhone X");
-                    ChromeOptions chromeOptions = new ChromeOptions();
                     chromeOptions.setExperimentalOption("mobileEmulation", mobileEmulation);
-                    capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                 }
+                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
                 instance = new ChromeDriver(capabilities);
                 break;
         }
@@ -95,7 +95,7 @@ public class Driver {
         instance.quit();
     }
 
-    public static void startRecord(String videoFolder) {
+    public static void startRecord(String videoFolder, String videoName) {
         try {
             org.openqa.selenium.Dimension screenSize = instance.manage().window().getSize();
             org.openqa.selenium.Point point = instance.manage().window().getPosition();
@@ -107,14 +107,14 @@ public class Driver {
 
             GraphicsConfiguration graphicsConfiguration = GraphicsEnvironment.getLocalGraphicsEnvironment().getDefaultScreenDevice().getDefaultConfiguration();
             Rectangle captureSize = new Rectangle(x, y, width, height);
-            screenRecorder = new ScreenRecorder(graphicsConfiguration, captureSize,
+            videoRecorder = new VideoRecorder(graphicsConfiguration, captureSize,
                     new Format(MediaTypeKey, FormatKeys.MediaType.FILE, MimeTypeKey, MIME_AVI),
                     new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE,
                             CompressorNameKey, ENCODING_AVI_TECHSMITH_SCREEN_CAPTURE, DepthKey, 24, FrameRateKey,
                             Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
                     new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)),
-                    null, new File(videoFolder));
-            screenRecorder.start();
+                    null, new File(videoFolder), videoName);
+            videoRecorder.start();
         } catch (IOException | AWTException e) {
             e.printStackTrace();
         }
@@ -122,7 +122,7 @@ public class Driver {
 
     public static void stopRecord() {
         try {
-            screenRecorder.stop();
+            videoRecorder.stop();
         } catch (IOException e) {
             e.printStackTrace();
         }
