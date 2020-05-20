@@ -1,6 +1,6 @@
 package goBear.initiations;
 
-import automationLibrary.actions.GeneralAction;
+import automationLibrary.actions.BaseAction;
 import automationLibrary.initiations.Configurations;
 import goBear.objects.Details;
 import goBear.objects.Filter;
@@ -13,7 +13,7 @@ import java.util.List;
 
 public class TestConfigurations {
 
-    public static JSONObject dataObject = new JSONObject(GeneralAction.readFile(Configurations.TEST_DATA_FILE_PATH));
+    public static JSONObject dataObject = new JSONObject(BaseAction.readFile(Configurations.TEST_DATA_FILE_PATH));
     public static String homePageUrl;
     public static Filter testDataFilter;
     public static Sort testDataSort;

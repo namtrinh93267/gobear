@@ -1,59 +1,49 @@
 package goBear.pages;
 
-import automationLibrary.actions.GeneralAction;
-import automationLibrary.executions.Execution;
-import automationLibrary.utils.ReportManager;
-import com.relevantcodes.extentreports.LogStatus;
-import goBear.objects.TravelInsuranceSearch;
+import automationLibrary.actions.BaseAction;
 import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
 
-import java.util.List;
+public class HomePage extends BaseAction {
 
-public class HomePage {
+    public HomePage(WebDriver driver, SoftAssert softAssert) {
+        super(driver, softAssert);
+        PageFactory.initElements(driver, this);
+    }
+
     //Interactive elements
-    public static WebElement insuranceTab() {
-        return GeneralAction.getElement(By.xpath("//a[@aria-controls='Insurance'][@role='tab']"));
-    }
+    @FindBy(xpath="//a[@aria-controls='Insurance'][@role='tab']")
+    WebElement insuranceTab;
 
-    public static WebElement travelTab() {
-        return GeneralAction.getElement(By.xpath("//a[@aria-controls='Travel'][@role='tab']"));
-    }
+    @FindBy(xpath="//a[@aria-controls='Travel'][@role='tab']")
+    WebElement travelTab;
 
-    public static WebElement tripSelect() {
-        return GeneralAction.getElement(By.xpath("//select[@name='travel-form-trip-type']"));
-    }
-
-    public static WebElement travellerSelect() {
-        return GeneralAction.getElement(By.xpath("//select[@name='travel-form-traveller']"));
-    }
-
-    public static WebElement countrySelect() {
-        return GeneralAction.getElement(By.xpath("//select[@name='travel-form-country']"));
-    }
-
-    public static WebElement showMyResultsButton() {
-        return GeneralAction.getElement(By.xpath("//div[@id='Insurance']//button[.='Show my results']"));
-    }
+    @FindBy(xpath="//div[@id='Insurance']//button[.='Show my results']")
+    WebElement showMyResultsButton;
 
     //Wait locators
-    public static By noneDisplayLoadingStatusLocator() {
+    public By noneDisplayLoadingStatusLocator() {
         return By.xpath("//div[@data-gb-name='loading-status'][@style='display: none;']");
     }
 
-    public static void selectInsuranceTab() {
-        ReportManager.addReportLog(LogStatus.INFO, "Select 'Insurance' tab");
-        GeneralAction.click(insuranceTab());
+    public void selectInsuranceTab() {
+        Reporter.log("Select 'Insurance' tab");
+        click(insuranceTab);
     }
 
-    public static void goToTravelSection() {
-        ReportManager.addReportLog(LogStatus.INFO, "Go to Travel section");
-        GeneralAction.click(travelTab());
+    public void goToTravelSection() {
+        Reporter.log("Go to Travel section");
+        click(travelTab);
     }
 
-    public static void goToTravelResultsPage() {
-        ReportManager.addReportLog(LogStatus.INFO, "Go to Travel results page");
-        GeneralAction.click(showMyResultsButton());
-        GeneralAction.waitForElementPresent(noneDisplayLoadingStatusLocator());
+    public void goToTravelResultsPage() {
+        Reporter.log("Go to Travel results page");
+        click(showMyResultsButton);
+        waitForElementPresent(noneDisplayLoadingStatusLocator());
     }
 }

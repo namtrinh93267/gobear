@@ -1,4 +1,4 @@
-import automationLibrary.actions.GeneralAction;
+import automationLibrary.actions.BaseAction;
 import goBear.initiations.TestBase;
 import goBear.initiations.TestConfigurations;
 import goBear.objects.TravelInsuranceSearch;
@@ -9,22 +9,24 @@ import org.testng.annotations.Test;
 public class BasicGoal extends TestBase {
     @Test
     public void basicGoal() {
-        GeneralAction.navigateToPage(TestConfigurations.homePageUrl);
-        HomePage.selectInsuranceTab();
-        HomePage.goToTravelSection();
-        HomePage.goToTravelResultsPage();
-        TravelResultPage.verifyAtLeastThreeCardsDisplayed();
-        TravelResultPage.verifyCategoriesAreFunctional();
+        HomePage homePage = new HomePage(this.driver, this.softAssert);
+        homePage.selectInsuranceTab();
+        homePage.goToTravelSection();
+        homePage.goToTravelResultsPage();
 
-        TravelInsuranceSearch actualFilterTravelInsuranceSearch = TravelResultPage.filterTravelInsurance(TestConfigurations.testDataFilter);
-        TravelResultPage.verifyFilterTravelInsuranceSearch(actualFilterTravelInsuranceSearch);
+        TravelResultPage travelResultPage = new TravelResultPage(this.driver, this.softAssert);
+        travelResultPage.verifyAtLeastThreeCardsDisplayed();
+        travelResultPage.verifyCategoriesAreFunctional();
 
-        TravelInsuranceSearch actualSortTravelInsuranceSearch = TravelResultPage.sortTravelInsurance(TestConfigurations.testDataSort);
-        TravelResultPage.verifySortTravelInsuranceSearch(actualSortTravelInsuranceSearch);
+        TravelInsuranceSearch actualFilterTravelInsuranceSearch = travelResultPage.filterTravelInsurance(TestConfigurations.testDataFilter);
+        travelResultPage.verifyFilterTravelInsuranceSearch(actualFilterTravelInsuranceSearch);
 
-        TravelInsuranceSearch actualDetailTravelInsuranceSearch = TravelResultPage.detailTravelInsurance(TestConfigurations.testDataDetails);
-        TravelResultPage.verifyDetailTravelInsuranceSearch(actualDetailTravelInsuranceSearch);
+        TravelInsuranceSearch actualSortTravelInsuranceSearch = travelResultPage.sortTravelInsurance(TestConfigurations.testDataSort);
+        travelResultPage.verifySortTravelInsuranceSearch(actualSortTravelInsuranceSearch);
 
-        GeneralAction.verifyTest();
+        TravelInsuranceSearch actualDetailTravelInsuranceSearch = travelResultPage.detailTravelInsurance(TestConfigurations.testDataDetails);
+        travelResultPage.verifyDetailTravelInsuranceSearch(actualDetailTravelInsuranceSearch);
+
+        this.softAssert.assertAll();
     }
 }
