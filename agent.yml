@@ -2,8 +2,8 @@ reporting:
   enabled: true
   project-key: Test
   server:
-    hostname: https://namtrinh.zebrunner.com
-    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwicGFzc3dvcmQiOiJ5UmVzOCtzckYvMlM2aWxXaWZSS0pVcnRQN1o1Mkk4TiIsInRlbmFudCI6Im5hbXRyaW5oIiwiaXNzIjoiaWFtIiwiZXhwIjozNzU0MTQzNjcyfQ.9QCMIc2pXeNpGKTeavTrpJPrZBPHmIokMlPjTRKF4kXHQJsQ5aO3WtNahY4uxgA_PhRbz_Z1YoFWZ1qPArPYSQ
+    hostname: http://qc6.test.sendo.vn
+    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwicGFzc3dvcmQiOiJsRVFlZkYzMFdXak9ORVlDNjBQUFgvdGZLckdJS2liayIsImV4cCI6Mzc1NDE1MTcxNn0.l_8kLkvwm9NPziQL22VuhLrq3n0Col2sVLZ_8RMzjj7vMJp5Jf_wmOOD5YTlxjGJYhDUZXHvkVVxCgF_DUtSfQ
   run:
     display-name: Nightly Regression Suite
     build: 1.12.1.96-SNAPSHOT
