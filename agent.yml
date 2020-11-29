@@ -1,0 +1,10 @@
+reporting:
+  enabled: true
+  project-key: Test
+  server:
+    hostname: https://namtrinh.zebrunner.com
+    access-token: eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIzIiwicGFzc3dvcmQiOiJ5UmVzOCtzckYvMlM2aWxXaWZSS0pVcnRQN1o1Mkk4TiIsInRlbmFudCI6Im5hbXRyaW5oIiwiaXNzIjoiaWFtIiwiZXhwIjozNzU0MTQzNjcyfQ.9QCMIc2pXeNpGKTeavTrpJPrZBPHmIokMlPjTRKF4kXHQJsQ5aO3WtNahY4uxgA_PhRbz_Z1YoFWZ1qPArPYSQ
+  run:
+    display-name: Nightly Regression Suite
+    build: 1.12.1.96-SNAPSHOT
+    environment: TEST-1

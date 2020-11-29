@@ -85,7 +85,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>6.10</version>
+            <version>7.3.0</version>
         </dependency>
 
         <dependency>
@@ -98,6 +98,13 @@
             <groupId>com.pojosontheweb</groupId>
             <artifactId>monte-repack</artifactId>
             <version>1.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zebrunner</groupId>
+            <artifactId>agent-testng</artifactId>
+            <version>1.0.0</version>
+            <scope>test</scope>
         </dependency>
     </dependencies>
 

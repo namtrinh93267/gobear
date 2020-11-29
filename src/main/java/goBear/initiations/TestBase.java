@@ -13,7 +13,7 @@ import org.testng.asserts.SoftAssert;
 import java.lang.reflect.Method;
 
 public class TestBase {
-    String environment = System.getProperty("environment");
+    String environment = "production";
     boolean isMobileEmulation = Boolean.parseBoolean(System.getProperty("isMobileEmulation"));
 
     public DriverManager driverManager;

@@ -22,7 +22,6 @@ public class ChromeDriverManager extends DriverManager {
         System.setProperty("webdriver.chrome.driver", chromedriverPath);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("start-fullscreen");
 
         if(isMobileEmulation) {
             Map<String, String> mobileEmulation = new HashMap<>();
