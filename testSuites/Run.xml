@@ -1,12 +1,15 @@
-<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name = "Run">
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite verbose="1" name="Web-Test" parallel="methods">
+
+    <parameter name="suiteOwner" value="qpsdemo"/>
     <parameter name="zafira_project" value="TestProject"/>
     <parameter name="jenkinsJobName" value="Web-Test"/>
-    <parameter name="jenkinsJobType" value="web"/>
+    <parameter name="jenkinsJobType" value="api"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
-    <test name = "Run">
+
+    <test name="Web Test">
         <classes>
-            <class name = "BasicGoal"></class>
+            <class name="BasicGoal"/>
         </classes>
     </test>
 </suite>
