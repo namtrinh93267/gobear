@@ -1,9 +1,12 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name = "Run">
+    <parameter name="zafira_project" value="Test"/>
+    <parameter name="jenkinsJobName" value="Web-Test"/>
+    <parameter name="jenkinsJobType" value="web"/>
+    <parameter name="jenkinsEnvironments" value="DEMO"/>
     <test name = "Run">
         <classes>
             <class name = "BasicGoal"></class>
-            <class name = "StretchGoal"></class>
         </classes>
     </test>
 </suite>
