@@ -1,6 +1,6 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
 <suite name = "Run">
-    <parameter name="zafira_project" value="Test"/>
+    <parameter name="zafira_project" value="TestProject"/>
     <parameter name="jenkinsJobName" value="Web-Test"/>
     <parameter name="jenkinsJobType" value="web"/>
     <parameter name="jenkinsEnvironments" value="DEMO"/>
