@@ -16,6 +16,23 @@ public class ChromeDriverManager extends DriverManager {
     public void createDriver(boolean isMobileEmulation) {
         String chromedriverPath = "";
         
+        ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--disable-web-security");
+    	options.addArguments("--disable-popup-blocking");
+		options.setHeadless(true);
+		options.addArguments("--window-size=1600,900");
+		options.addArguments("disable-infobars");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--no-sandbox");
+    	Map<String, Object> prefs = new HashMap<String, Object>();
+    	prefs.put("credentials_enable_service", false);
+    	prefs.put("profile.password_manager_enabled", false);
+    	prefs.put("default_content_setting.popups", 1);
+    	prefs.put("profile.default_content_setting_values.notifications", 2);
+    	options.setExperimentalOption("prefs", prefs);
+        
         if(SystemUtils.IS_OS_LINUX) {
             File file64 = new File(Configurations.CHROMEDRIVER_LINUX64_FILE_PATH);
          	File file32 = new File(Configurations.CHROMEDRIVER_LINUX32_FILE_PATH);
@@ -33,7 +50,6 @@ public class ChromeDriverManager extends DriverManager {
         }
         System.setProperty("webdriver.chrome.driver", chromedriverPath);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
-        ChromeOptions options = new ChromeOptions();
 
         if(isMobileEmulation) {
             Map<String, String> mobileEmulation = new HashMap<>();
