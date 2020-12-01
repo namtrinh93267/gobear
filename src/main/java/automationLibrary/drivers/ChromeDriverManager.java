@@ -28,6 +28,7 @@ public class ChromeDriverManager extends DriverManager {
     	options.setExperimentalOption("prefs", prefs);
         
         if(SystemUtils.IS_OS_LINUX) {
+        	System.setProperty("java.awt.headless", "false");
             File file64 = new File(Configurations.CHROMEDRIVER_LINUX64_FILE_PATH);
          	File file32 = new File(Configurations.CHROMEDRIVER_LINUX32_FILE_PATH);
     		file64.setExecutable(true);
