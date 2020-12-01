@@ -61,7 +61,7 @@ public class ChromeDriverManager extends DriverManager {
         }
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
         try {
-			driver = new RemoteWebDriver(new URL("http://10.90.96.7:80/selenoid/wd/hub"), capabilities);
+			driver = new RemoteWebDriver(new URL("http://demo:demo@10.90.96.7:80/selenoid/wd/hub"), capabilities);
 		} catch (MalformedURLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
