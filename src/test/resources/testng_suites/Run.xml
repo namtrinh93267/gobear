@@ -4,7 +4,7 @@
     <parameter name="suiteOwner" value="namtrinh"/>
     <parameter name="zafira_project" value="Test"/>
     <parameter name="jenkinsJobName" value="Web-Test"/>
-    <parameter name="jenkinsJobType" value="api"/>
+    <parameter name="jenkinsJobType" value="web"/>
     <parameter name="jenkinsEnvironments" value="Demo1"/>
 
     <test name="Web Test">
