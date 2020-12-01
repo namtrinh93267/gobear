@@ -1,11 +1,11 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite verbose="1" name="Web-Test" parallel="methods">
 
-    <parameter name="suiteOwner" value="qpsdemo"/>
-    <parameter name="zafira_project" value="TestProject"/>
+    <parameter name="suiteOwner" value="namtrinh"/>
+    <parameter name="zafira_project" value="Test"/>
     <parameter name="jenkinsJobName" value="Web-Test"/>
     <parameter name="jenkinsJobType" value="api"/>
-    <parameter name="jenkinsEnvironments" value="DEMO"/>
+    <parameter name="jenkinsEnvironments" value="Demo1"/>
 
     <test name="Web Test">
         <classes>
