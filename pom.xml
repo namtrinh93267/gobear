@@ -27,7 +27,7 @@
 					<useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						TestNG suite XML files
-						<suiteXmlFile>testSuites/Run.xml</suiteXmlFile>
+						<suiteXmlFile>src/test/resources/testng_suites/Run.xml</suiteXmlFile>
 					</suiteXmlFiles>
 				</configuration>
 			</plugin>
