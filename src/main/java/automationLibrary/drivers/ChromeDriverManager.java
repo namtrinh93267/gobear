@@ -20,6 +20,15 @@ public class ChromeDriverManager extends DriverManager {
         String chromedriverPath = "";
         
         ChromeOptions options = new ChromeOptions();
+    	options.addArguments("--disable-web-security");
+    	options.addArguments("--disable-popup-blocking");
+		options.addArguments("--headless");
+		options.addArguments("--window-size=1600,900");
+		options.addArguments("disable-infobars");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--no-sandbox");
     	Map<String, Object> prefs = new HashMap<String, Object>();
     	prefs.put("credentials_enable_service", false);
     	prefs.put("profile.password_manager_enabled", false);
@@ -28,7 +37,6 @@ public class ChromeDriverManager extends DriverManager {
     	options.setExperimentalOption("prefs", prefs);
         
         if(SystemUtils.IS_OS_LINUX) {
-        	System.setProperty("java.awt.headless", "false");
             File file64 = new File(Configurations.CHROMEDRIVER_LINUX64_FILE_PATH);
          	File file32 = new File(Configurations.CHROMEDRIVER_LINUX32_FILE_PATH);
     		file64.setExecutable(true);

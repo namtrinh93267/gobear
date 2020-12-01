@@ -24,6 +24,9 @@
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>3.0.0-M4</version>
 				<configuration>
+					<systemPropertyVariables>
+						<java.awt.headless>true</java.awt.headless>
+					</systemPropertyVariables>
 					<useSystemClassLoader>false</useSystemClassLoader>
 					<suiteXmlFiles>
 						TestNG suite XML files
