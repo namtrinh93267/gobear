@@ -13,6 +13,7 @@ import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 public class BaseAction {
 
@@ -150,8 +151,8 @@ public class BaseAction {
 
     public void waitForElementClickable(WebElement element) {
         try {
-            FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofMillis(Configurations.ELEMENT_WAIT_TIME))
-                    .pollingEvery(Duration.ofMillis(Configurations.POLLING_TIME))
+            FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Configurations.ELEMENT_WAIT_TIME, TimeUnit.MILLISECONDS)
+                    .pollingEvery(Configurations.POLLING_TIME, TimeUnit.MILLISECONDS)
                     .ignoring(NoSuchElementException.class, NullPointerException.class);
             fluentWait.until(ExpectedConditions.elementToBeClickable(element));
         } catch (TimeoutException e) {
@@ -161,8 +162,8 @@ public class BaseAction {
 
     public void waitForElementPresent(By locator) {
         try {
-            FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Duration.ofMillis(Configurations.ELEMENT_WAIT_TIME))
-                    .pollingEvery(Duration.ofMillis(Configurations.POLLING_TIME))
+            FluentWait<WebDriver> fluentWait = new FluentWait<WebDriver>(driver).withTimeout(Configurations.ELEMENT_WAIT_TIME, TimeUnit.MILLISECONDS)
+                    .pollingEvery(Configurations.POLLING_TIME, TimeUnit.MILLISECONDS)
                     .ignoring(NoSuchElementException.class, NullPointerException.class);
             fluentWait.until(ExpectedConditions.presenceOfElementLocated(locator));
         } catch (TimeoutException e) {

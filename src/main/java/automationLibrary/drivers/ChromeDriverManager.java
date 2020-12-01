@@ -19,7 +19,7 @@ public class ChromeDriverManager extends DriverManager {
         ChromeOptions options = new ChromeOptions();
     	options.addArguments("--disable-web-security");
     	options.addArguments("--disable-popup-blocking");
-		options.setHeadless(true);
+		options.addArguments("--headless");
 		options.addArguments("--window-size=1600,900");
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-extensions");
