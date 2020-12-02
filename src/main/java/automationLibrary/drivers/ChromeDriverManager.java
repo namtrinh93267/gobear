@@ -20,17 +20,17 @@ public class ChromeDriverManager extends DriverManager {
         String chromedriverPath = "";
         
         ChromeOptions options = new ChromeOptions();
-		/*
-		 * options.addArguments("--disable-web-security");
-		 * options.addArguments("--disable-popup-blocking");
-		 * options.addArguments("--headless");
-		 * options.addArguments("--window-size=1600,900");
-		 * options.addArguments("disable-infobars");
-		 * options.addArguments("--disable-extensions");
-		 * options.addArguments("--disable-gpu");
-		 * options.addArguments("--disable-dev-shm-usage");
-		 * options.addArguments("--no-sandbox");
-		 */
+        options.setHeadless(true);
+		options.addArguments("--disable-web-security");
+		options.addArguments("--disable-popup-blocking");
+		options.addArguments("--headless");
+		options.addArguments("--window-size=1600,900");
+		options.addArguments("disable-infobars");
+		options.addArguments("--disable-extensions");
+		options.addArguments("--disable-gpu");
+		options.addArguments("--disable-dev-shm-usage");
+		options.addArguments("--no-sandbox");
+		 
     	Map<String, Object> prefs = new HashMap<String, Object>();
     	prefs.put("credentials_enable_service", false);
     	prefs.put("profile.password_manager_enabled", false);
