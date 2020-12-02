@@ -55,7 +55,7 @@ public class ChromeDriverManager extends DriverManager {
         } else if(SystemUtils.IS_OS_WINDOWS) {
             chromedriverPath = Configurations.CHROMEDRIVER_WINDOWS_FILE_PATH;
         }
-       System.setProperty("webdriver.chrome.driver", chromedriverPath);
+       //System.setProperty("webdriver.chrome.driver", chromedriverPath);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
         if(isMobileEmulation) {
