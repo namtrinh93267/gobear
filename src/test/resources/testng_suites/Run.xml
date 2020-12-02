@@ -6,6 +6,7 @@
     <parameter name="jenkinsJobName" value="Web-Test"/>
     <parameter name="jenkinsJobType" value="web"/>
     <parameter name="jenkinsEnvironments" value="Demo1"/>
+    <parameter name="jenkinsEnableVideo" value="true"/>
 
     <test name="Web Test">
         <classes>
