@@ -40,15 +40,17 @@ public class TestBase extends AbstractTest {
         driver.get(TestConfigurations.homePageUrl);
 
         //Start video recorder
-        String videoFolder = System.getProperty("user.dir") + "/recordVideos/";
-        String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7, "dd-MM-yyyy-HH-mm-ss");
-        driverManager.startRecord(videoFolder, videoName);
+		/*
+		 * String videoFolder = System.getProperty("user.dir") + "/recordVideos/";
+		 * String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7,
+		 * "dd-MM-yyyy-HH-mm-ss"); driverManager.startRecord(videoFolder, videoName);
+		 */
     }
 
     @AfterMethod
     public void afterMethod(ITestResult iTestResult) {
-        driverManager.stopRecord();
-        driverManager.quitDriver();
+        //driverManager.stopRecord();
+       // driverManager.quitDriver();
     }
 
     @AfterSuite
