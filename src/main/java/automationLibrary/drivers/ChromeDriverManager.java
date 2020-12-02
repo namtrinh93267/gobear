@@ -7,13 +7,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 import org.apache.commons.lang3.SystemUtils;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
 import automationLibrary.initiations.Configurations;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class ChromeDriverManager extends DriverManager {
@@ -64,12 +62,12 @@ public class ChromeDriverManager extends DriverManager {
             options.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-        driver = new RemoteWebDriver(capabilities);
-//        try {
-//			driver = new RemoteWebDriver(new URL("http://demo:demo@10.90.96.7:80/selenoid/wd/hub"), capabilities);
-//		} catch (MalformedURLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
+       // driver = new RemoteWebDriver
+        try {
+			driver = new RemoteWebDriver(new URL("http://demo:demo@10.90.96.7:80/selenoid/wd/hub"), capabilities);
+		} catch (MalformedURLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
     }
 }

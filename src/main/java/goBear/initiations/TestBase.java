@@ -1,18 +1,23 @@
 package goBear.initiations;
 
+import java.lang.reflect.Method;
+
+import org.openqa.selenium.WebDriver;
+import org.testng.ITestResult;
+import org.testng.annotations.AfterMethod;
+import org.testng.annotations.AfterSuite;
+import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.BeforeSuite;
+import org.testng.asserts.SoftAssert;
+
+import com.qaprosoft.carina.core.foundation.AbstractTest;
+
 import automationLibrary.actions.BaseAction;
 import automationLibrary.drivers.DriverManager;
 import automationLibrary.drivers.DriverManagerFactory;
 import automationLibrary.drivers.DriverType;
-import automationLibrary.utils.VideoRecorder;
-import org.openqa.selenium.WebDriver;
-import org.testng.ITestResult;
-import org.testng.annotations.*;
-import org.testng.asserts.SoftAssert;
 
-import java.lang.reflect.Method;
-
-public class TestBase {
+public class TestBase extends AbstractTest {
     String environment = "production";
     boolean isMobileEmulation = Boolean.parseBoolean(System.getProperty("isMobileEmulation"));
 
@@ -30,7 +35,7 @@ public class TestBase {
         System.out.println("");
         System.out.println("======" + "START RUNNING METHOD '" + method.getName() + "'======");
         driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-        driver = driverManager.getDriver(isMobileEmulation);
+        driver = getDriver();
         softAssert = new SoftAssert();
         driver.get(TestConfigurations.homePageUrl);
 

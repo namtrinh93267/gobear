@@ -4,19 +4,19 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.testng.annotations.Test;
 
-import com.qaprosoft.carina.core.foundation.AbstractTest;
 import com.zebrunner.agent.core.annotation.TestLabel;
 
+import goBear.initiations.TestBase;
 import goBear.pages.HomePage;
 import goBear.pages.TravelResultPage;
 
-public class BasicGoal extends AbstractTest {
+public class BasicGoal extends TestBase {
 	Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
 	
     @TestLabel(name = "web", value = {"reporting-service:v1.0", "reporting-service:v1.1"})
     @Test
     public void basicGoal() {
-        HomePage homePage = new HomePage(getDriver());
+        HomePage homePage = new HomePage(this.driver);
         LOGGER.info("Select Insurance tab");
         homePage.selectInsuranceTab();
         LOGGER.info("Go to travel section");
@@ -24,7 +24,7 @@ public class BasicGoal extends AbstractTest {
         LOGGER.info("Go to travel result page");
         homePage.goToTravelResultsPage();
 
-        TravelResultPage travelResultPage = new TravelResultPage(getDriver());
+        TravelResultPage travelResultPage = new TravelResultPage(this.driver);
         travelResultPage.verifyAtLeastThreeCardsDisplayed();
         travelResultPage.verifyCategoriesAreFunctional();
 
