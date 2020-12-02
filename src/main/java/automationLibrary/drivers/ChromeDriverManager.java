@@ -1,19 +1,22 @@
 package automationLibrary.drivers;
 
-import automationLibrary.initiations.Configurations;
+import java.io.File;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.apache.commons.lang3.SystemUtils;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.remote.DesiredCapabilities;
 
-import java.io.File;
-import java.util.HashMap;
-import java.util.Map;
+import automationLibrary.initiations.Configurations;
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class ChromeDriverManager extends DriverManager {
     @Override
     public void createDriver(boolean isMobileEmulation) {
+    	WebDriverManager.chromedriver().setup();
         String chromedriverPath = "";
         
         ChromeOptions options = new ChromeOptions();
@@ -50,7 +53,7 @@ public class ChromeDriverManager extends DriverManager {
         } else if(SystemUtils.IS_OS_WINDOWS) {
             chromedriverPath = Configurations.CHROMEDRIVER_WINDOWS_FILE_PATH;
         }
-        System.setProperty("webdriver.chrome.driver", chromedriverPath);
+       // System.setProperty("webdriver.chrome.driver", chromedriverPath);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
         if(isMobileEmulation) {

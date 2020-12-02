@@ -124,6 +124,12 @@
 		</dependency>
 
 		<dependency>
+			<groupId>io.github.bonigarcia</groupId>
+			<artifactId>webdrivermanager</artifactId>
+			<version>4.2.2</version>
+		</dependency>
+
+		<dependency>
 			<groupId>com.zebrunner</groupId>
 			<artifactId>agent-testng</artifactId>
 			<version>1.0.0</version>
