@@ -23,7 +23,6 @@ public class ChromeDriverManager extends DriverManager {
         options.setHeadless(true);
 		options.addArguments("--disable-web-security");
 		options.addArguments("--disable-popup-blocking");
-		options.addArguments("--headless");
 		options.addArguments("--window-size=1600,900");
 		options.addArguments("disable-infobars");
 		options.addArguments("--disable-extensions");
