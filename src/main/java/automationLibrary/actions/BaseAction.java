@@ -20,9 +20,8 @@ public class BaseAction {
     public WebDriver driver;
     public SoftAssert softAssert;
 
-    public BaseAction(WebDriver driver, SoftAssert softAssert) {
+    public BaseAction(WebDriver driver) {
         this.driver = driver;
-        this.softAssert = softAssert;
     }
 
     public WebElement getElement(By by) {

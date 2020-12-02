@@ -1,20 +1,19 @@
-import automationLibrary.actions.BaseAction;
-import goBear.initiations.TestBase;
-import goBear.pages.HomePage;
-import goBear.pages.TravelResultPage;
 import org.testng.annotations.Test;
 
-public class StretchGoal extends TestBase {
+import com.qaprosoft.carina.core.foundation.AbstractTest;
+
+import goBear.pages.HomePage;
+import goBear.pages.TravelResultPage;
+
+public class StretchGoal extends AbstractTest {
     @Test
     public void stretchGoal() {
-        HomePage homePage = new HomePage(this.driver, this.softAssert);
+        HomePage homePage = new HomePage(getDriver());
         homePage.selectInsuranceTab();
         homePage.goToTravelSection();
         homePage.goToTravelResultsPage();
 
-        TravelResultPage travelResultPage = new TravelResultPage(this.driver, this.softAssert);
+        TravelResultPage travelResultPage = new TravelResultPage(getDriver());
         travelResultPage.verifyLeftSideMenuIsFunctional();
-
-        this.softAssert.assertAll();
     }
 }

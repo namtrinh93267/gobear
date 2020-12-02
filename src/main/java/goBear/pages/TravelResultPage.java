@@ -18,8 +18,8 @@ import java.util.List;
 
 public class TravelResultPage extends BaseAction {
 
-    public TravelResultPage(WebDriver driver, SoftAssert softAssert) {
-        super(driver, softAssert);
+    public TravelResultPage(WebDriver driver) {
+        super(driver);
         PageFactory.initElements(driver, this);
     }
 
