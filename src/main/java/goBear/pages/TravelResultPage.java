@@ -1,20 +1,21 @@
 package goBear.pages;
 
+import java.util.List;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+import org.testng.Assert;
+import org.testng.Reporter;
+
 import automationLibrary.actions.BaseAction;
 import goBear.initiations.Constant;
 import goBear.objects.Details;
 import goBear.objects.Filter;
 import goBear.objects.Sort;
 import goBear.objects.TravelInsuranceSearch;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-import org.testng.Reporter;
-import org.testng.asserts.SoftAssert;
-
-import java.util.List;
 
 public class TravelResultPage extends BaseAction {
 
@@ -96,7 +97,7 @@ public class TravelResultPage extends BaseAction {
         List<WebElement> cardList = getElements(By.xpath("//div[@class='grid-row']/div[contains(@class,'card-full')]"));
         int cardAmount = cardList.size();
         if (cardAmount < 3) {
-            softAssert.assertTrue(false, "Actual card amount is " + cardAmount + ", expected card amount is at least 3");
+        	Assert.assertTrue(false, "Actual card amount is " + cardAmount + ", expected card amount is at least 3");
         }
     }
 
@@ -105,9 +106,9 @@ public class TravelResultPage extends BaseAction {
         String filterSectionXpath = "//div[contains(@class,'filter-detail')]";
         String sortSectionXpath = "//div[contains(@class,'sort-detail')]";
         String editSectionXpath = "//div[contains(@class,'edit-detail')]";
-        softAssert.assertTrue(isElementPresent(By.xpath(filterSectionXpath)), "Element " + filterSectionXpath + " does not exist");
-        softAssert.assertTrue(isElementPresent(By.xpath(sortSectionXpath)), "Element " + sortSectionXpath + " does not exist");
-        softAssert.assertTrue(isElementPresent(By.xpath(editSectionXpath)), "Element " + editSectionXpath + " does not exist");
+        Assert.assertTrue(isElementPresent(By.xpath(filterSectionXpath)), "Element " + filterSectionXpath + " does not exist");
+        Assert.assertTrue(isElementPresent(By.xpath(sortSectionXpath)), "Element " + sortSectionXpath + " does not exist");
+        Assert.assertTrue(isElementPresent(By.xpath(editSectionXpath)), "Element " + editSectionXpath + " does not exist");
     }
 
     public void selectDateFromDatePicker(String date) {

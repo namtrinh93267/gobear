@@ -25,7 +25,9 @@ public class BasicGoal extends TestBase {
         homePage.goToTravelResultsPage();
 
         TravelResultPage travelResultPage = new TravelResultPage(getDriver());
+        LOGGER.info("Verify at least three cards displayed");
         travelResultPage.verifyAtLeastThreeCardsDisplayed();
+        LOGGER.info("Verify categories are functional");
         travelResultPage.verifyCategoriesAreFunctional();
 
 //        TravelInsuranceSearch actualFilterTravelInsuranceSearch = travelResultPage.filterTravelInsurance(TestConfigurations.testDataFilter);
