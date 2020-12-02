@@ -16,7 +16,7 @@ public class BasicGoal extends TestBase {
     @TestLabel(name = "web", value = {"reporting-service:v1.0", "reporting-service:v1.1"})
     @Test
     public void basicGoal() {
-        HomePage homePage = new HomePage(this.driver);
+        HomePage homePage = new HomePage(getDriver());
         LOGGER.info("Select Insurance tab");
         homePage.selectInsuranceTab();
         LOGGER.info("Go to travel section");
@@ -24,7 +24,7 @@ public class BasicGoal extends TestBase {
         LOGGER.info("Go to travel result page");
         homePage.goToTravelResultsPage();
 
-        TravelResultPage travelResultPage = new TravelResultPage(this.driver);
+        TravelResultPage travelResultPage = new TravelResultPage(getDriver());
         travelResultPage.verifyAtLeastThreeCardsDisplayed();
         travelResultPage.verifyCategoriesAreFunctional();
 
