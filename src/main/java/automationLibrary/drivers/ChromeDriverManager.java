@@ -22,7 +22,7 @@ public class ChromeDriverManager extends DriverManager {
         String chromedriverPath = "";
         
         ChromeOptions options = new ChromeOptions();
-        options.setHeadless(true);
+        //options.setHeadless(true);
 		options.addArguments("--disable-web-security");
 		options.addArguments("--disable-popup-blocking");
 		options.addArguments("--window-size=1600,900");
