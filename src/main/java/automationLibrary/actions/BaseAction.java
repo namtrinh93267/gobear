@@ -1,19 +1,28 @@
 package automationLibrary.actions;
 
-import automationLibrary.initiations.Configurations;
-import org.openqa.selenium.*;
-import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.*;
-import org.testng.Reporter;
-import org.testng.asserts.SoftAssert;
-
-import java.io.*;
-import java.time.Duration;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.NoSuchElementException;
+import org.openqa.selenium.TimeoutException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.FluentWait;
+import org.testng.Reporter;
+import org.testng.asserts.SoftAssert;
+
+import automationLibrary.initiations.Configurations;
 
 public class BaseAction {
 
@@ -23,6 +32,7 @@ public class BaseAction {
     public BaseAction(WebDriver driver) {
         this.driver = driver;
     }
+    
 
     public WebElement getElement(By by) {
         waitForElementPresent(by);

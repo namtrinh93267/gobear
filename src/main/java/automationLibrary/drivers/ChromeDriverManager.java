@@ -53,7 +53,7 @@ public class ChromeDriverManager extends DriverManager {
         } else if(SystemUtils.IS_OS_WINDOWS) {
             chromedriverPath = Configurations.CHROMEDRIVER_WINDOWS_FILE_PATH;
         }
-       //System.setProperty("webdriver.chrome.driver", chromedriverPath);
+        System.setProperty("webdriver.chrome.driver", chromedriverPath);
         DesiredCapabilities capabilities = DesiredCapabilities.chrome();
 
         if(isMobileEmulation) {
@@ -62,12 +62,13 @@ public class ChromeDriverManager extends DriverManager {
             options.setExperimentalOption("mobileEmulation", mobileEmulation);
         }
         capabilities.setCapability(ChromeOptions.CAPABILITY, options);
-       // driver = new RemoteWebDriver
-        try {
+        //driver = new ChromeDriver(capabilities);
+		
+		try {
 			driver = new RemoteWebDriver(new URL("http://demo:demo@10.90.96.7:80/selenoid/wd/hub"), capabilities);
-		} catch (MalformedURLException e) {
-			// TODO Auto-generated catch block
+		} catch (MalformedURLException e) { // TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		 
     }
 }

@@ -12,7 +12,6 @@ import goBear.pages.TravelResultPage;
 
 public class BasicGoal extends TestBase {
 	Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());
-	
     @TestLabel(name = "web", value = {"reporting-service:v1.0", "reporting-service:v1.1"})
     @Test
     public void basicGoal() {
@@ -29,6 +28,7 @@ public class BasicGoal extends TestBase {
         travelResultPage.verifyAtLeastThreeCardsDisplayed();
         LOGGER.info("Verify categories are functional");
         travelResultPage.verifyCategoriesAreFunctional();
+
 
 //        TravelInsuranceSearch actualFilterTravelInsuranceSearch = travelResultPage.filterTravelInsurance(TestConfigurations.testDataFilter);
 //        travelResultPage.verifyFilterTravelInsuranceSearch(actualFilterTravelInsuranceSearch);
