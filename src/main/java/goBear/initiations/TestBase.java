@@ -46,14 +46,14 @@ public class TestBase {
         //Start video recorder
         String videoFolder = System.getProperty("user.dir") + "/recordVideos/";
         String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7, "dd-MM-yyyy-HH-mm-ss");
-        videoPath = videoFolder + videoName;
-        driverManager.startRecord(videoFolder, videoName);
+        videoPath = videoFolder + videoName + ".avi";
+        //driverManager.startRecord(videoFolder, videoName);
     }
 
     @AfterMethod
     public void afterMethod(ITestResult iTestResult) {
-        driverManager.stopRecord();	
-        driverManager.quitDriver();
+        //driverManager.stopRecord();	
+        //driverManager.quitDriver();
     }
 
     @AfterSuite
