@@ -44,16 +44,16 @@ public class TestBase {
         driver.get(TestConfigurations.homePageUrl);
 
         //Start video recorder
-        String videoFolder = System.getProperty("user.dir") + "/recordVideos/";
+        String videoFolder = "D://xampp/htdocs/videos/";
         String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7, "dd-MM-yyyy-HH-mm-ss");
-        videoPath = videoFolder + videoName + ".avi";
+        //videoPath = videoFolder + videoName + ".mp4";
         //driverManager.startRecord(videoFolder, videoName);
     }
 
     @AfterMethod
     public void afterMethod(ITestResult iTestResult) {
         //driverManager.stopRecord();	
-        //driverManager.quitDriver();
+        driverManager.quitDriver();
     }
 
     @AfterSuite
