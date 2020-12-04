@@ -11,8 +11,6 @@ import com.qaprosoft.carina.core.foundation.utils.Messager;
 import automationLibrary.actions.BaseAction;
 
 public class HomePage extends BaseAction {
-	
-	Messager LOGGER;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -35,17 +33,17 @@ public class HomePage extends BaseAction {
     }
 
     public void selectInsuranceTab() {
-    	LOGGER.info("Select 'Insurance' tab");
+    	Messager.INROMATION.info("Select 'Insurance' tab");
         click(insuranceTab);
     }
 
     public void goToTravelSection() {
-    	LOGGER.info("Go to 'Travel' section");
+    	Messager.INROMATION.info("Go to 'Travel' section");
         click(travelTab);
     }
 
     public void goToTravelResultsPage() {
-    	LOGGER.info("Go to Travel result page");
+    	Messager.INROMATION.info("Go to Travel result page");
         click(showMyResultsButton);
         waitForElementPresent(noneDisplayLoadingStatusLocator());
     }
