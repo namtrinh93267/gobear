@@ -1,15 +1,21 @@
 package goBear.pages;
 
-import automationLibrary.actions.BaseAction;
+import java.lang.invoke.MethodHandles;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.testng.Reporter;
-import org.testng.asserts.SoftAssert;
+
+import automationLibrary.actions.BaseAction;
 
 public class HomePage extends BaseAction {
+	
+	Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());	
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -32,17 +38,17 @@ public class HomePage extends BaseAction {
     }
 
     public void selectInsuranceTab() {
-        Reporter.log("Select 'Insurance' tab");
+    	LOGGER.info("Select 'Insurance' tab");
         click(insuranceTab);
     }
 
     public void goToTravelSection() {
-        Reporter.log("Go to Travel section");
+    	LOGGER.info("Select 'Insurance' tab");
         click(travelTab);
     }
 
     public void goToTravelResultsPage() {
-        Reporter.log("Go to Travel results page");
+    	LOGGER.info("Select 'Insurance' tab");
         click(showMyResultsButton);
         waitForElementPresent(noneDisplayLoadingStatusLocator());
     }

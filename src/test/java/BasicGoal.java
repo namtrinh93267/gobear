@@ -1,10 +1,14 @@
 import org.testng.annotations.Test;
 
+import com.qaprosoft.carina.core.foundation.utils.ownership.MethodOwner;
+
 import goBear.initiations.TestBase;
 import goBear.pages.HomePage;
 import goBear.pages.TravelResultPage;
 
 public class BasicGoal extends TestBase {
+	
+	@MethodOwner(owner = "namtrinh")
     @Test
     public void basicGoal() {
         HomePage homePage = new HomePage(this.driver);
