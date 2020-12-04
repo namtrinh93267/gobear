@@ -1,21 +1,18 @@
 package goBear.pages;
 
-import java.lang.invoke.MethodHandles;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-import org.testng.Reporter;
+
+import com.qaprosoft.carina.core.foundation.utils.Messager;
 
 import automationLibrary.actions.BaseAction;
 
 public class HomePage extends BaseAction {
 	
-	Logger LOGGER = LoggerFactory.getLogger(MethodHandles.lookup().lookupClass());	
+	Messager LOGGER;
 
     public HomePage(WebDriver driver) {
         super(driver);
@@ -43,12 +40,12 @@ public class HomePage extends BaseAction {
     }
 
     public void goToTravelSection() {
-    	LOGGER.info("Select 'Insurance' tab");
+    	LOGGER.info("Go to 'Travel' section");
         click(travelTab);
     }
 
     public void goToTravelResultsPage() {
-    	LOGGER.info("Select 'Insurance' tab");
+    	LOGGER.info("Go to Travel result page");
         click(showMyResultsButton);
         waitForElementPresent(noneDisplayLoadingStatusLocator());
     }
