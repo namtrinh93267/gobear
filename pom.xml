@@ -133,42 +133,6 @@
 			<artifactId>json</artifactId>
 			<version>20160810</version>
 		</dependency>
-
-		<dependency>
-			<groupId>com.pojosontheweb</groupId>
-			<artifactId>monte-repack</artifactId>
-			<version>1.0</version>
-		</dependency>
-
-		<dependency>
-			<groupId>io.github.bonigarcia</groupId>
-			<artifactId>webdrivermanager</artifactId>
-			<version>4.2.2</version>
-		</dependency>
-
-		<dependency>
-			<groupId>com.zebrunner</groupId>
-			<artifactId>agent-testng</artifactId>
-			<version>1.0.0</version>
-			<scope>test</scope>
-		</dependency>
-
-		<dependency>
-			<groupId>com.automation-remarks</groupId>
-			<artifactId>video-recorder-testng</artifactId>
-			<version>LATEST</version>
-		</dependency>
-
-		<dependency>
-			<groupId>uk.co.caprica</groupId>
-			<artifactId>vlcj</artifactId>
-			<version>3.10.1</version>
-		</dependency>
-		<dependency>
-			<groupId>net.java.dev.jna</groupId>
-			<artifactId>jna</artifactId>
-			<version>4.2.0</version>
-		</dependency>
 	</dependencies>
 
 
