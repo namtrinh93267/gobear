@@ -10,13 +10,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeSuite;
 import org.testng.asserts.SoftAssert;
 
-import automationLibrary.actions.BaseAction;
+import com.qaprosoft.carina.core.foundation.AbstractTest;
+
 import automationLibrary.drivers.DriverManager;
 import automationLibrary.drivers.DriverManagerFactory;
 import automationLibrary.drivers.DriverType;
 
-public class TestBase {
-	String runType = "agent";
+public class TestBase extends AbstractTest {
+	//String runType = "agent";
     String environment = "production";
     boolean isMobileEmulation = Boolean.parseBoolean(System.getProperty("isMobileEmulation"));
 
@@ -35,17 +36,18 @@ public class TestBase {
         System.out.println("");
         System.out.println("======" + "START RUNNING METHOD '" + method.getName() + "'======");
         driverManager = DriverManagerFactory.getDriverManager(DriverType.CHROME);
-        if(runType.equals("agent")) {
-        	driver = driverManager.getDriver(isMobileEmulation);
-        } else {
-        	//driver = getDriver();
-        }
+//        if(runType.equals("agent")) {
+//        	driver = driverManager.getDriver(isMobileEmulation);
+//        } else {
+//        	//driver = getDriver();
+//        }
+        driver = getDriver();
         softAssert = new SoftAssert();
         driver.get(TestConfigurations.homePageUrl);
 
         //Start video recorder
-        String videoFolder = "D://xampp/htdocs/videos/";
-        String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7, "dd-MM-yyyy-HH-mm-ss");
+        //String videoFolder = "D://xampp/htdocs/videos/";
+        //String videoName = BaseAction.getCurrentTimeByTimezoneOffset(7, "dd-MM-yyyy-HH-mm-ss");
         //videoPath = videoFolder + videoName + ".mp4";
         //driverManager.startRecord(videoFolder, videoName);
     }
@@ -53,7 +55,7 @@ public class TestBase {
     @AfterMethod
     public void afterMethod(ITestResult iTestResult) {
         //driverManager.stopRecord();	
-        driverManager.quitDriver();
+        //driverManager.quitDriver();
     }
 
     @AfterSuite
