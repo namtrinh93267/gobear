@@ -16,7 +16,7 @@ import automationLibrary.drivers.DriverManager;
 import automationLibrary.drivers.DriverManagerFactory;
 import automationLibrary.drivers.DriverType;
 
-public class TestBase {
+public class TestBase extends AbstractTest {
 	//String runType = "agent";
     String environment = "production";
     boolean isMobileEmulation = Boolean.parseBoolean(System.getProperty("isMobileEmulation"));
@@ -41,7 +41,8 @@ public class TestBase {
 //        } else {
 //        	//driver = getDriver();
 //        }
-        driver = driverManager.getDriver(isMobileEmulation);
+        driver = getDriver();
+        //driver = driverManager.getDriver(isMobileEmulation);
         softAssert = new SoftAssert();
         driver.get(TestConfigurations.homePageUrl);
 
