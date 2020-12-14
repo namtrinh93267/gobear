@@ -42,12 +42,12 @@ public class HomePage extends BaseAction {
     }
 
     public void goToTravelSection() {
-    	LOGGER.info("Select 'Insurance' tab");
+    	LOGGER.info("Go to Travel section");
         click(travelTab);
     }
 
     public void goToTravelResultsPage() {
-    	LOGGER.info("Select 'Insurance' tab");
+    	LOGGER.info("Select travel results page");
         click(showMyResultsButton);
         waitForElementPresent(noneDisplayLoadingStatusLocator());
     }
